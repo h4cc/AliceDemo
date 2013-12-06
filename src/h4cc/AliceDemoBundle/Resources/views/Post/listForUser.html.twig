@@ -1,0 +1,19 @@
+<h1>Posts from {{ user.name }}</h1>
+{% if posts %}
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Category</th>
+        </tr>
+        {% for post in posts %}
+            <tr>
+                <td><a href="{{ path('h4cc_alicedemo_post_show', {id: post.id}) }}">{{ post.id }}</a></td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.category }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No posts found.</p>
+{% endif %}

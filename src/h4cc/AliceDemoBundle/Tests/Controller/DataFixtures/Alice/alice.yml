@@ -1,0 +1,26 @@
+#
+# This file is part of the h4cc/AliceDemo package.
+#
+# (c) Julius Beckmann <github@h4cc.de>
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+#
+
+
+# --- Just Alice with her post ---
+#
+# Using static values for predictable unit and functional tests.
+
+
+\h4cc\AliceDemoBundle\Entity\User:
+  alice:
+    name: Alice
+    email:  alice@example.com
+
+\h4cc\AliceDemoBundle\Entity\Post:
+  post:
+    title: "Very cool title"
+    content: "Lorem Ipsum ..."
+    user: @alice
+    category: "aCategory"

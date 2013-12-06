@@ -1,0 +1,21 @@
+<h1>Users</h1>
+{% if users %}
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Posts</th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('h4cc_alicedemo_user_show', {id: user.id}) }}">{{ user.id }}</a></td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td><a href="{{ path('h4cc_alicedemo_post_listforuser', {id: user.id}) }}">Read Posts</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No users found.</p>
+{% endif %}

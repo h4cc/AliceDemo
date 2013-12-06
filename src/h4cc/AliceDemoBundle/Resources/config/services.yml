@@ -1,0 +1,15 @@
+
+#
+# This file is part of the h4cc/AliceDemo package.
+#
+# (c) Julius Beckmann <github@h4cc.de>
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+#
+
+services:
+    h4cc_alice_demo.faker.provider:
+        class: h4cc\AliceDemoBundle\DataFixtures\Alice\Provider\PostProvider
+        tags:
+            -  { name: h4cc_alice_fixtures.provider }

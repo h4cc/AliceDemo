@@ -1,0 +1,5 @@
+
+h4cc_alice_demo:
+    resource: "@h4ccAliceDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+
