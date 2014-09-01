@@ -8,10 +8,14 @@ services:
   - mongodb
 
 before_install:
+  # Ensure newest composer state.
   - composer self-update || true
   - composer update h4cc/alice-fixtures-bundle
+  # Prepare databases.
   - mysql -e "create database IF NOT EXISTS symfony;" -uroot
   - mongo mydb_test --eval 'db.addUser("travis", "test");'
+  # Enable ext-mongo.
+  - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 script:
   - php app/console config:dump-reference h4cc_alice_fixtures
