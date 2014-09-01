@@ -22,6 +22,8 @@ class AppKernel extends Kernel
 
             // The Bundle using the fixtures.
             new h4cc\AliceDemoBundle\h4ccAliceDemoBundle(),
+            // Another bundle with a own entity manager
+            new h4cc\AliceCustomerBundle\h4ccAliceCustomerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

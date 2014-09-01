@@ -5,23 +5,31 @@ imports:
 # Global configuration, can be changed by each FixtureSet on its own.
 h4cc_alice_fixtures:
 
-    # Locale which will be used by faker for randomized data.
-    locale:               en_EN
+    default_manager:  orm
 
-    # A seed to make sure Faker generates data consistently across runs, set to "null" to disable.
-    seed:                 1
+    managers:
 
-    # Set to false if no ORM flushes should be made.
-    do_flush:             true
+        orm:
+            # Locale which will be used by faker for randomized data.
+            locale:               en_EN
 
-    # Define service id for the used object manager.
-    #object_manager:       null
+            # A seed to make sure Faker generates data consistently across runs, set to "null" to disable.
+            seed:                 1
 
-    # Define service id for the used Schema tool.
-    #schema_tool:          null
+            # Set to false if no ORM flushes should be made.
+            do_flush:             true
 
-    # This option enables selecting between Doctrine ORM and MongoDB ODM and will set the default object_manager and schema_tool services.
-    doctrine:             "orm" # One of "orm"; "mongodb-odm"
+            # Define service id for the used Schema tool.
+            #schema_tool:          null
+
+            # This option enables selecting between Doctrine ORM and MongoDB ODM and will set the default object_manager and schema_tool services.
+            doctrine:             "orm" # One of "orm"; "mongodb-odm"
+
+        odm:
+            locale:               de_DE
+            seed:                 2
+            do_flush:             true
+            doctrine:             "mongodb-odm" # One of "orm"; "mongodb-odm"
 
 
 
