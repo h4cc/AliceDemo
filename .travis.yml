@@ -1,0 +1,19 @@
+language: php
+
+php:
+   - 5.6
+
+services:
+  - mysql
+  - mongodb
+
+before_install:
+  - composer self-update || true
+  - composer update h4cc/alice-fixtures-bundle
+  - mysql -e "create database IF NOT EXISTS symfony;" -uroot
+  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+
+script:
+  - php app/console config:dump-reference h4cc_alice_fixtures
+  - php app/console h4cc_alice_fixtures:load:files --manager odm src/h4cc/AliceDemoBundle/DataFixtures/Alice/mongodb.yml
+  - php app/console h4cc_alice_fixtures:load:sets --manager orm

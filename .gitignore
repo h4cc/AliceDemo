@@ -14,3 +14,6 @@ app/config/parameters.yml
 
 # Binary links
 bin/doctrine*
+
+# IDE Settings
+.idea/
