@@ -1,18 +1,32 @@
 language: php
 
-php:
-   - 5.6
-
 services:
   - mysql
   - mongodb
+
+php:
+   - 5.3
+   - 5.4
+   - 5.5
+   - 5.6
+
+env:
+   - SYMFONY_VERSION=2.1.*
+   - SYMFONY_VERSION=2.2.*
+   - SYMFONY_VERSION=2.3.*
+   - SYMFONY_VERSION=2.4.*
+   - SYMFONY_VERSION=2.5.*
+
+matrix:
+   fast_finish: true
 
 before_install:
   # Enable ext-mongo.
   - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   # Ensure newest composer and dependencies state.
   - composer self-update || true
-  - composer update
+  - composer require symfony/framework-bundle:${SYMFONY_VERSION} --no-update --dev
+  - composer update --prefer-dist --no-interaction
   # Prepare databases.
   - mysql -e "create database IF NOT EXISTS symfony;" -uroot
   - mongo mydb_test --eval 'db.addUser("travis", "test");'
@@ -28,3 +42,7 @@ script:
   - php app/console h4cc_alice_fixtures:load:files --drop --manager odm src/h4cc/AliceDemoBundle/DataFixtures/Alice/mongodb.yml
   - php app/console h4cc_alice_fixtures:load:sets --manager orm
   - php app/console  h4cc_alice_demo:travis:check && echo "Successfully loaded Fixtures ... again"
+
+notifications:
+   email:
+      - php@h4cc.de
