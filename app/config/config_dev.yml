@@ -21,6 +21,8 @@ h4cc_alice_fixtures:
 
             # Define service id for the used Schema tool.
             #schema_tool:          null
+            schema_tool:          null
+            #object_manager:          null
 
             # This option enables selecting between Doctrine ORM and MongoDB ODM and will set the default object_manager and schema_tool services.
             doctrine:             "orm" # One of "orm"; "mongodb-odm"

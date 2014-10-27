@@ -1,0 +1,10 @@
+
+\h4cc\AliceDemoBundle\Entity\User:
+  # 4 more personalized
+  user{Alice, Bob, Max, Moriz}:
+    name: <current()>
+    email:  <current()>@example.com
+  # More users
+  user{1..10}:
+    name: RandomUser<current()>
+    email: user<current()>@example.com

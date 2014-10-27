@@ -24,16 +24,13 @@
     title: <sentence()>
     content: <text(2000)>
     user: @userAlice
-    category: <postCategory()>
   # Bob has two posts.
   post{4..5}:
     title: <sentence()>
     content: <text(2000)>
     user: @userBob
-    category: <postCategory()>
   # Max will only have one post.
   post{6}:
     title: <sentence()>
     content: <text(2000)>
     user: @userMax
-    category: <postCategory()>

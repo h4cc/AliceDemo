@@ -36,11 +36,11 @@ script:
   - php app/console config:dump-reference h4cc_alice_fixtures
   # Load fixtures one time.
   - php app/console h4cc_alice_fixtures:load:files --drop --manager odm src/h4cc/AliceDemoBundle/DataFixtures/Alice/mongodb.yml
-  - php app/console h4cc_alice_fixtures:load:sets --manager orm
+  - php app/console h4cc_alice_fixtures:load:sets --drop --manager orm
   - php app/console  h4cc_alice_demo:travis:check && echo "Successfully loaded Fixtures"
   # Load fixtures another time to be sure it works repeatedly.
   - php app/console h4cc_alice_fixtures:load:files --drop --manager odm src/h4cc/AliceDemoBundle/DataFixtures/Alice/mongodb.yml
-  - php app/console h4cc_alice_fixtures:load:sets --manager orm
+  - php app/console h4cc_alice_fixtures:load:sets --drop --manager orm
   - php app/console  h4cc_alice_demo:travis:check && echo "Successfully loaded Fixtures ... again"
 
 notifications:

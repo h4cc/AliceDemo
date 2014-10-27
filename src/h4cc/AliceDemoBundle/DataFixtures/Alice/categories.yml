@@ -1,0 +1,6 @@
+
+\h4cc\AliceDemoBundle\Entity\Category:
+  # Random Categories
+  category{1..10}:
+    title: <categoryName()>
+    posts: 5x @post*

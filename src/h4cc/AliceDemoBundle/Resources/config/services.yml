@@ -10,6 +10,6 @@
 
 services:
     h4cc_alice_demo.faker.provider:
-        class: h4cc\AliceDemoBundle\DataFixtures\Alice\Provider\PostProvider
+        class: h4cc\AliceDemoBundle\DataFixtures\Alice\Provider\CategoryProvider
         tags:
             -  { name: h4cc_alice_fixtures.provider }

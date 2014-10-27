@@ -12,10 +12,10 @@
 $set = new h4cc\AliceFixturesBundle\Fixtures\FixtureSet(array(
     'locale' => 'de_DE',
     'seed' => 42,
-    'do_drop' => true,
+    'do_drop' => false,
     'do_persist' => true,
 ));
 
-$set->addFile(__DIR__.'/default.yml', 'yaml');
+$set->addFile(__DIR__.'/post_category.yml', 'yaml');
 
 return $set;

@@ -12,18 +12,18 @@
 namespace h4cc\AliceDemoBundle\DataFixtures\Alice\Provider;
 
 /**
- * Class PostProvider
+ * Class CategoryProvider
  *
  * @author Julius Beckmann <github@h4cc.de>
  */
-class PostProvider
+class CategoryProvider
 {
     /**
-     * Returning a random post category.
+     * Returning a random category name.
      *
      * @return string
      */
-    public function postCategory() {
+    public function categoryName() {
         $categories = array(
             'Fantasy',
             'Technology',

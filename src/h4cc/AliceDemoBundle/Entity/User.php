@@ -52,14 +52,15 @@ class User
      */
     private $posts;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->posts = new ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -82,7 +83,7 @@ class User
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -105,7 +106,7 @@ class User
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -128,4 +129,8 @@ class User
         return $this->posts;
     }
 
+    public function __toString()
+    {
+        return $this->getId() . '|' . $this->getName().'|'.$this->getEmail();
+    }
 }

@@ -15,12 +15,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Post
+ * Category
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Post
+class Category
 {
     /**
      * @var integer
@@ -39,28 +39,15 @@ class Post
     private $title;
 
     /**
-     * @var string
+     * @var Post[]
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\ManyToMany(targetEntity="Post", inversedBy="categories")
+     * @ORM\JoinTable(name="categories_posts")
      */
-    private $content;
-
-    /**
-     * @var User
-     *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="post")
-     */
-    private $user;
-
-    /**
-     * @var Category[]
-     *
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="posts")
-     */
-    private $categories;
+    private $posts;
 
     public function __construct() {
-        $this->categories = new ArrayCollection();
+        $this->posts = new ArrayCollection();
     }
 
     /**
@@ -97,58 +84,18 @@ class Post
     }
 
     /**
-     * Set content
-     *
-     * @param string $content
-     * @return Post
+     * @param Post $post
      */
-    public function setContent($content)
+    public function addPost(Post $post)
     {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string 
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param \h4cc\AliceDemoBundle\Entity\User $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-        $user->addPost($this);
-    }
-
-    /**
-     * @return \h4cc\AliceDemoBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * @param Category $category
-     */
-    public function addCategory(Category $category)
-    {
-        $this->categories->add($category);
+        $this->posts->add($post);
     }
 
     /**
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
-    public function getCategories()
+    public function getPosts()
     {
-        return $this->categories;
+        return $this->posts;
     }
 }

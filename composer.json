@@ -6,6 +6,12 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "repositories": [
+        {
+            "type":"vcs",
+            "url":"/home/julius/php/AliceFixturesBundle"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "~2.1",
@@ -21,7 +27,7 @@
         "sensio/framework-extra-bundle": "~2.1",
         "sensio/generator-bundle": "~2.1",
         "incenteev/composer-parameter-handler": "~2.0",
-        "h4cc/alice-fixtures-bundle": "dev-master",
+        "h4cc/alice-fixtures-bundle": "dev-feature/fixes",
         "symfony/framework-bundle": "2.5.*"
     },
     "scripts": {
