@@ -21,7 +21,7 @@
         "sensio/framework-extra-bundle": "~2.1",
         "sensio/generator-bundle": "~2.1",
         "incenteev/composer-parameter-handler": "~2.0",
-        "h4cc/alice-fixtures-bundle": "dev-feature/fixes",
+        "h4cc/alice-fixtures-bundle": "~0.5",
         "symfony/framework-bundle": "2.5.*"
     },
     "scripts": {
