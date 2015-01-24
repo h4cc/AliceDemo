@@ -34,21 +34,19 @@ php app/console config:dump-reference h4cc_alice_fixtures
 
 ## First fixture file
 
-A simple fixture file is the [default.yml](src/h4cc/AliceDemoBundle/DataFixtures/Alice/default.yml)
-
-For it to work, check out the part "Adding a Faker Provider"
+A simple fixture file is the [default.yml](src/h4cc/AliceCustomerBundle/DataFixtures/Alice/default.yml)
 
 
 ## Adding a Faker Provider
 
 The configuration of a provider can be found in the [services.yml](src/h4cc/AliceDemoBundle/Resources/config/services.yml).
 
-The referenced "PostProvider" class add a method called "postCategory", which can be used in the fixture files like this: "<postCategory()>".
+The referenced "CategoryProvider" class add a method called "categoryName", which can be used in the fixture files like this: "<categoryName()>". For example here in [categories.yml](src/h4cc/AliceDemoBundle/DataFixtures/Alice/categories.yml).
 
 
 ## Default Fixture Set
 
-A default fixture set is the [ExampleSet.php](src/h4cc/AliceDemoBundle/DataFixtures/Alice/ExampleSet.php).
+A default fixture set is the [CustomerDefaultSet.php](https://github.com/h4cc/AliceDemo/blob/master/src/h4cc/AliceCustomerBundle/DataFixtures/Alice/CustomerDefaultSet.php).
 This file can be automatically loaded by this command:
 ```
 php app/console h4cc_alice_fixtures:load:sets
