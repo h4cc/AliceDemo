@@ -4,7 +4,7 @@ AliceDemo
 A example Symfony2 Application using h4cc/AliceFixureBundle in multiple ways.
 
 
-## Installation of hacc/AliceFixureBundle
+## Installation of h4cc/AliceFixureBundle
 
 Add in your [composer.json](composer.json) the following line to either "require" or "require-dev":
 ```
